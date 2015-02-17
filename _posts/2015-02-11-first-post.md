@@ -9,7 +9,7 @@ Decided to start up a blog to keep me accountable with my various endeavors. Hos
 
 
 ### Test Code
-```python
+{% highlight python %}
 #!/usr/bin/python3 
 
 import random
@@ -17,4 +17,5 @@ def print_rand():
     print(random.randint(1, 99))
 if __name__ == '__main__':
     print_rand()
-```
+
+{% endhighlight %}
