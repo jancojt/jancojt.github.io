@@ -17,3 +17,9 @@ def print_rand():
 if __name__ == '__main__':
     print_rand()
 ```
+
+### Test Terminal
+
+<pre class=terminal>
+> echo "testing terminal prompt"
+</pre>
