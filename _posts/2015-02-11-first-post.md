@@ -8,3 +8,18 @@ categories: posts
 Decided to start up a blog to keep me accountable with my various endeavors. Hosted with github pages using the Jekyll blogging framework. 
 
 
+### Test Code
+```python
+#!/usr/bin/python3 
+
+import random
+def print_rand():
+    print(random.randint(1, 99))
+if __name__ == '__main__':
+    print_rand()
+```
+
+### Test Terminal Code
+<pre class=terminal>
+> echo "example terminal prompt"
+</pre>
