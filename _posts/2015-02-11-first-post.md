@@ -18,8 +18,3 @@ def print_rand():
 if __name__ == '__main__':
     print_rand()
 ```
-
-### Test Terminal Code
-<pre class=terminal>
-> echo "example terminal prompt"
-</pre>
