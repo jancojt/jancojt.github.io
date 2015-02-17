@@ -16,11 +16,22 @@
     <p>
     <span id="pub-date">Published on {{ page.date | date_to_string }}</span>
     <span class="separator">&bull;</span>
-      <span id="social">
-        <a href="http://jacobjanco.com">My Site</a> 
-        <span class="separator">&bull;</span>
-        <a href="https://twitter.com/jancojt">Twitter</a>
-      </span>
+    <span id="social">
+      <a href="http://jacobjanco.com">My Site</a> 
+      <span class="separator">&bull;</span>
+      <a href="https://twitter.com/jancojt">Twitter</a>
+    </span>
     </p>
   </div>
+  <div class="post_list post">  
+    <ul>
+      <h4>Latest Posts</h4>
+      {% for post in site.posts limit 5 %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+      {{ post.content | strip_html | truncatewords:25}}<br>
+      <a href="{{ post.url }}">Read more...</a><br><br>
+      {% endfor %}
+    </ul>
+  </div>
+
 </div>
