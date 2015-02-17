@@ -7,9 +7,8 @@ categories: posts
 
 Decided to start up a blog to keep me accountable with my various endeavors. Hosted with github pages using the Jekyll blogging framework. 
 
-
 ### Test Code
-```
+```python
 #!/usr/bin/python3 
 
 import random
