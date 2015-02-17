@@ -27,6 +27,10 @@
           <span class="tagline">Jacob's Personal Blog</span>
         </div>
         <div class="posts">
+          <div id="cover-photo-container">
+            <img id="cover-photo" src="/images/{{ page.cover }}">
+          </div>
+
           <ul class="posts-list">
             {% for post in site.posts %}
               <li class="post-link">
