@@ -1,8 +1,7 @@
-/* .highlight  { 
+.highlight  { 
     font: normal normal normal 115%/normal 'Monaco', 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace !important;
     font-size: 1.0em;
 }
-*/
 
 .highlight { background-color: #fdf6e3; color: #586e75 }
 .highlight .c { color: #93a1a1 } /* Comment */
