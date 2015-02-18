@@ -26,12 +26,6 @@ if __name__ == '__main__':
 </pre>
 
 ### Test LaTeX 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
-<script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 <p>
 When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
@@ -46,4 +40,4 @@ $$
 $$
 </p>
 
-Pretty sweet.
+Pretty sweet. Added comments with disqus and tracking with google analytics.

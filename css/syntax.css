@@ -3,6 +3,19 @@
     font-size: 1.0em;
 }
 
+.highlight pre code * {
+    white-space: nowrap;   
+}
+
+.highlight pre {
+    overflow-x: auto;    
+}
+
+.highlight pre code {
+    white-space: pre;   
+}
+
+
 .highlight { background-color: #fdf6e3; color: #586e75 }
 .highlight .c { color: #93a1a1 } /* Comment */
 .highlight .err { color: #586e75 } /* Error */
