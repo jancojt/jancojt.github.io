@@ -2,6 +2,7 @@
 layout: post
 title: Dynamic Programming
 date: 2015-02-17 10:54:00
+comments: true
 categories: posts
 ---
 
