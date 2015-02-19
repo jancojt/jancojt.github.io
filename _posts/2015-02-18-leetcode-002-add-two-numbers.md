@@ -61,6 +61,7 @@ class Solution:
             carry = summation // 10
 
             res.next = ListNode(summation % 10)
+            
             h1 = h1.next
             res = res.next
 
@@ -69,6 +70,7 @@ class Solution:
             carry = summation // 10
 
             res.next = ListNode(summation % 10)
+
             h2 = h2.next
             res = res.next
 
