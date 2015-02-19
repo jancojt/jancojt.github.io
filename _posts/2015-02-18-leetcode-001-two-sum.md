@@ -21,8 +21,8 @@ where index1 must be less than index2.
 Please note that your returned answers (both index1 and index2) are not zero-based.
 
 You may assume that each input would have exactly one solution.
-<b>Input: numbers={2, 7, 11, 15}, target=9 </b>
-<b>Output: index1=1, index2=2</b>
+<b>Input:</b> numbers={2, 7, 11, 15}, target=9
+<b>Output:</b> index1=1, index2=2
 </pre>
 
 

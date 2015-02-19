@@ -1,7 +1,7 @@
 ---
 layout: post
-title: LeetCode OJ Problem 1 - Two Sum
-date: 2015-02-18 10:00:00
+title: LeetCode OJ Problem 2 - Add Two Numbers
+date: 2015-02-18 15:00:00
 comments: true
 categories: posts
 tags:
@@ -12,55 +12,67 @@ I hope this helps you improve; attempting to explain these solutions definitely 
 
 *Note\: Naming conventions follow LeetCode's submission specifications (classes/camelCase)*
 
-Problem 1: [Two Sum](https://oj.leetcode.com/problems/two-sum/) 
+Problem 1: [Add Two Numbers](https://oj.leetcode.com/problems/add-two-numbers/) 
 
 <pre class=code>
-Given an array of integers, find two numbers such that they add up to a specific target number.
-The function twoSum should return indices of the two numbers such that they add up to the target,
-where index1 must be less than index2.
-Please note that your returned answers (both index1 and index2) are not zero-based.
+You are given two linked lists representing two non-negative numbers. 
+The digits are stored in reverse order and each of their nodes contain a single digit. 
+Add the two numbers and return it as a linked list.
 
-You may assume that each input would have exactly one solution.
-<b>Input: numbers={2, 7, 11, 15}, target=9 </b>
-<b>Output: index1=1, index2=2</b>
+<b>Input:</b> (2 -> 4 -> 3) + (5 -> 6 -> 4)
+<b>Output:</b> 7 -> 0 -> 8 
 </pre>
 
+### Traverse and Remember the Carry: $\mathcal{O}(max(m, n))$ 
 
-### Naive: $\mathcal{O}(n\^2)$ 
+While our node is not None (or Null), we traverse the lists simultaneously and sum each node's value. Since the result must also be a linked list with each node representing a base 10 digit, we must maintain a carry variable. The carry will never exceed 1 since our max value of 9 + 9 + 1 gives us 19. We store the result in a linked list that grows as we iterate. 
 
-The naive approach has 2 pointers ($i$, $j$), we keep one in place and move the other through the remaining values checking for our sum. We return a tuple of the indices correctly summing to our target. 
+So, for the example input, 2 + 5 = 7, we add this to a result list, 6 + 4 = 10, we add 0 to the result list and save our carry, 4 + 3 = 7, plus the carry gives us 8, we store 8 as our final value. 
 
-```python
+If the lists were the same size, we would not need our clean up loops. Because list sizes vary, our iteration can terminate before we have traversed both fully. For that reason, we have clean up loops to handle varying array sizes and at the end we append our carry if it is greater than 0.  
+
+```python 
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
 class Solution:
-    def twoSum(self, a, tar):
-        i = 0 
-        j = 0 
-        while i < len(a) - 1:
-            j = i + 1 
-            while j < len(a):
-                if a[i] + a[j] == tar:
-                    return (i+1, j+1) # problem specifies indices at 1
-                j += 1 
-            i += 1 
-        return (-1, -1) 
-```
+    # @return a ListNode
+    def addTwoNumbers(self, h1, h2):
+        h3 = ListNode(0)
+        res = h3
+        carry = 0 
 
-### Sort and Binary Search: $\mathcal{O}(n\log n)$ 
+        while h1 and h2:
+            summation = carry + h1.val + h2.val
+            carry = summation // 10  
 
-We could also sort the data in *nlogn* time and perform searches on the array in *logn* time using binary search. For every element we would search for the absolute value of the difference between it and the target sum. This solution will lead to timeouts in the OJ. Left this code out because sorting the array necessitates tracking with a hash map. 
+            res.next = ListNode(summation % 10)
 
-### Shove Into Dictionary: $\mathcal{O}(n)$ 
+            h1 = h1.next 
+            h2 = h2.next
+            res = res.next
 
-We keep track of each element as we traverse the array, storing its index in a hash map. At each iterative step, we check our hash map for the difference between the target sum and the current value, e.g. if a[3] = 5, target sum = 8, we would like to see a stored value of 3.
+        while h1:
+            summation = carry + h1.val
+            carry = summation // 10
 
-```python
-class Solution:
-    def twoSum(self, a, tar):
-        hashed_comps = {}
-        for i, num in enumerate(a):
-            if tar - num in hashed_comps:
-                return sorted((i + 1, hashed_comps[tar - num] + 1))
-            else:
-                hashed_comps[num] = i
-        return (-1, -1)
+            res.next = ListNode(summation % 10)
+            h1 = h1.next
+            res = res.next
+
+        while h2: 
+            summation = carry + h2.val
+            carry = summation // 10
+
+            res.next = ListNode(summation % 10)
+            h2 = h2.next
+            res = res.next
+
+        if carry:
+            res.next = ListNode(carry)
+
+        return h3.next
 ```
