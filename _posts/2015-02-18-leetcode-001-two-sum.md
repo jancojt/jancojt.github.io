@@ -4,6 +4,7 @@ title: LeetCode OJ Problem 1 - Two Sum
 date: 2015-02-18 10:00:00
 comments: true
 categories: posts
+permalink: leetcode-1-two-sum
 tags:
 - leetcode
 ---

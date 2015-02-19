@@ -4,6 +4,7 @@ title: LeetCode OJ Problem 2 - Add Two Numbers
 date: 2015-02-18 15:00:00
 comments: true
 categories: posts
+permalink: leetcode-2-add-two-numbers
 tags:
 - leetcode
 ---

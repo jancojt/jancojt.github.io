@@ -3,6 +3,7 @@ layout: post
 title: Jekyll and GitHub
 date: 2015-02-11 15:00:00
 comments: true
+permalink: first-post
 categories: posts
 ---
 
