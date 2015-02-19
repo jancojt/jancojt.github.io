@@ -24,7 +24,7 @@ Add the two numbers and return it as a linked list.
 <b>Output:</b> 7 -> 0 -> 8 
 </pre>
 
-### Traverse and Remember the Carry: $\mathcal{O}(max(m, n))$ 
+### Traverse and Remember the Carry: $\mathcal{O}(m+n)$ 
 
 While our node is not None (or Null), we traverse the lists simultaneously and sum each node's value. Since the result must also be a linked list with each node representing a base 10 digit, we must maintain a carry variable. The carry will never exceed 1 since our max value of 9 + 9 + 1 gives us 19. We store the result in a linked list that grows as we iterate. 
 
