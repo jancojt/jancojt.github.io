@@ -47,7 +47,7 @@ class Solution:
 
 ### Sort and Binary Search: $\mathcal{O}(n\log n)$ 
 
-We could also sort the data in *nlogn* time and perform searches on the array in *logn* time using binary search. For every element we would search for the absolute value of the difference between it and the target sum. This solution will lead to timeouts in the OJ. Left this code out because sorting the array necessitates tracking with a hash map. 
+We could also sort the data in *nlogn* time and perform searches on the array in *logn* time using binary search. For every element we would search for the difference between it and the target sum. This solution will lead to timeouts in the OJ. Left this code out because sorting the array necessitates tracking with a hash map. 
 
 ### Shove Into Dictionary: $\mathcal{O}(n)$ 
 
