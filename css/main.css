@@ -274,3 +274,11 @@ a:hover {
     font-size: 0.95em;
     color: #777;
 }
+
+/* splash menu bar */
+.menu_bar {
+}
+.menu_bar p {
+    padding: 15px 0 20px 1.5em;
+    font-size: 1.5em;
+}

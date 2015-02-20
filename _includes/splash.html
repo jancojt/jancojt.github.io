@@ -1,0 +1,28 @@
+<div class="content" id="home">
+  <div id="post-info">
+    <div id="info-container">
+      <h1 id="title">Welcome =], still a bit under construction...</h1>
+      <div class="menu_bar">
+        <p><a href="">LeetCode Problems</a> </p>
+        <p><a href="">Computer Science</a></p>
+        <p><a href="">Archive</a></p>
+        <p><a href="">About</a></p>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-button">
+    <img src="/images/sidebar-button.png">
+  </div>
+  <div class="post_list post">  
+    <ul>
+      <h4>Latest Posts</h4>
+      {% for post in site.posts limit 10 %}
+      <li>
+      <span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {{ post.content | strip_html | truncatewords:50}}<br>
+      <a href="{{ post.url }}">Read more...</a><br><br>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
