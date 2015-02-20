@@ -13,7 +13,7 @@ I hope this helps you improve; attempting to explain these solutions definitely 
 
 *Note\: Naming conventions follow LeetCode's submission specifications (classes/camelCase)*
 
-Problem 1: [Add Two Numbers](https://oj.leetcode.com/problems/add-two-numbers/) 
+Problem 2: [Add Two Numbers](https://oj.leetcode.com/problems/add-two-numbers/) 
 
 <pre class=code>
 You are given two linked lists representing two non-negative numbers. 
