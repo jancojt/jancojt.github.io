@@ -1,0 +1,21 @@
+<div class="content" id="home">
+  <div id="post-info">
+    <div id="info-container">
+      <h1 id="title">LeetCode OJ Problems</h1>
+    </div>
+  </div>
+    <ul>
+    {% for post in site.posts %}
+        {% for tag in post.tags %}
+          {% if tag == 'leetcode' %}
+            <li>
+              <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<span>{{ post.date | date_to_string }}</    span>
+            </li>
+          {% endif %}
+        {% endfor %}
+    {% endfor %}
+  </ul>
+  <div id="sidebar-button">
+      <img src="/images/sidebar-button.png">
+  </div>
+</div>

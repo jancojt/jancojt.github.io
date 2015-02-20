@@ -5,6 +5,8 @@ date: 2015-02-17 10:54:00
 comments: true
 permalink: dynamic-programming
 categories: posts
+tags:
+ - compsci
 ---
 
 Getting acquainted the basic concepts of computer science is challenging, I'd like to take the time to better understand core concepts and perhaps help others reach a better understanding as well. For me, dynamic programming represents the next major leap in thought following iteration and recursion as a means of solving and thinking about complex problems. We'll take a look at the Fibonacci Series followed by common problems and applications of the concept. 
