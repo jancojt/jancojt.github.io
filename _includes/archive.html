@@ -4,15 +4,16 @@
       <h1 id="title">Archive</h1>
     </div>
   </div>
-  <ul>
-    <h4>All Posts</h4>
-    {% for post in site.posts %}
-    <li>
-    <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<span>{{ post.date | date_to_string }}</span>
-    </li>
-    {% endfor %}
-  </ul>
-
+  <div class="post">
+    <ul>
+      <h4>All Posts</h4>
+      {% for post in site.posts %}
+      <li>
+      <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<span>{{ post.date | date_to_string }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
   <div id="sidebar-button">
     <img src="/images/sidebar-button.png">
   </div>

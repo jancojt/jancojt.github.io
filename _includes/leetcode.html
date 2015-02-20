@@ -4,8 +4,9 @@
       <h1 id="title">LeetCode OJ Problems</h1>
     </div>
   </div>
+  <div class="post">
     <ul>
-    {% for post in site.posts %}
+      {% for post in site.posts %}
         {% for tag in post.tags %}
           {% if tag == 'leetcode' %}
             <li>
@@ -13,9 +14,10 @@
             </li>
           {% endif %}
         {% endfor %}
-    {% endfor %}
-  </ul>
-  <div id="sidebar-button">
+      {% endfor %}
+      </ul>
+    </div>
+    <div id="sidebar-button">
       <img src="/images/sidebar-button.png">
+    </div>
   </div>
-</div>
