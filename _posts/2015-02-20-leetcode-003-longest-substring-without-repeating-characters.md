@@ -82,11 +82,14 @@ class Solution:
             return 0
         if len(s) == 1:
             return 1
+
         i = 0 
         j = 1 
+
         visited = {}
         visited[s[i]] = i 
         max_len = 1 
+
         while i < len(s) and j < len(s):
             if s[j] in visited and visited[s[j]] >= i:
                 if j - i > max_len:
@@ -96,7 +99,9 @@ class Solution:
                 visited[s[j]] = j 
                 j += 1 
 
+        # final check for maximum substring length
         if j - i > max_len:
             max_len = j - i 
+
         return max_len
 ```
