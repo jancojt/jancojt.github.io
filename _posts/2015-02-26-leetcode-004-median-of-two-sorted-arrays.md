@@ -110,31 +110,31 @@ So, in step 1, at we see that the index of k = 9 puts us 1 step above the median
 
 
 ```python
-def fmsa(a, b, k): 
-    if len(a) > len(b):
-        return fmsa(b, a, k)
-
-    if len(a) == 0:
-        return b[k-1]
-    if k == 1:
-        return min(a[0], b[0])
-
-    pa = min(k/2, len(a))
-    pb = k - pa
-
-    if a[pa-1] <= b[pb-1]:
-        return fmsa(a[pa:], b, k-pa)
-    else:
-        return fmsa(a, b[pb:], k-pb)
-
 class Solution:
-   def findMedianSortedArrays(self, a, b):
+    def findMedianSortedArrays(self, a, b):
         m = len(a) 
         n = len(b) 
 
         if (m + n) % 2 == 0:
-            return (fmsa(a, b, (m+n)/2) +
-                    fmsa(a, b, (m+n)/2 + 1)) / 2.0 
+            return (self.fmsa(a, b, (m+n)/2) +
+                    self.fmsa(a, b, (m+n)/2 + 1)) / 2.0 
         else:
-            return fmsa(a, b, (m+n)/2 + 1)
+            return self.fmsa(a, b, (m+n)/2 + 1)
+
+    def fmsa(self, a, b, k): 
+        if len(a) > len(b):
+            return self.fmsa(b, a, k)
+
+        if len(a) == 0:
+            return b[k-1]
+        if k == 1:
+            return min(a[0], b[0])
+
+        pa = min(k/2, len(a))
+        pb = k - pa
+
+        if a[pa-1] <= b[pb-1]:
+            return self.fmsa(a[pa:], b, k-pa)
+        else:
+            return self.fmsa(a, b[pb:], k-pb)
 ```
